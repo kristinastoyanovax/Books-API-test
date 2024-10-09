@@ -28,8 +28,19 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install Node.js
         run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
-          nvm install 20
+          curl -fsSL https://fnm.vercel.app/install | bash
+          
+          # activate fnm
+          source ~/.bashrc
+          
+          # download and install Node.js
+          fnm use --install-if-missing 20
+          
+          # verifies the right Node.js version is in the environment
+          node -v # should print `v20.18.0`
+          
+          # verifies the right npm version is in the environment
+          npm -v # should print `10.8.2`
 
       # Runs a set of commands using the runners shell
       - name: Install Newman

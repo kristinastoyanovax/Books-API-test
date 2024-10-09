@@ -29,9 +29,16 @@ jobs:
       - name: Newman Run
         run: newman run .github/workflows/Books-API.postman_collection.json --reporters cli,htmlextra
       - name: Commit report
-        run: |
-          cd .github
-          git config --global user.name 'kristinastoyanovax'
-          git config --global user.email 'christina.st.stoyanova@gmail.com'
-          git commit -am "Automated report"
-          git push
+        uses: EndBug/add-and-commit@v9
+        with: 
+          author_name: kristinastoyanova
+          author_email: christina.st.stoyanova@gmail.com
+          message: "Automated report"
+          add: '.'
+        
+        #run: |
+          
+          #git config --global user.name 'kristinastoyanovax'
+          #git config --global user.email 'christina.st.stoyanova@gmail.com'
+          #git commit -am "Automated report"
+          #git push

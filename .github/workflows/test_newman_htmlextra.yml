@@ -30,7 +30,7 @@ jobs:
         run: newman run .github/workflows/Books-API.postman_collection.json --reporters cli,htmlextra
       - name: Commit report
         run: |
-          sudo apt install git
+          cd .github
           git config --global user.name 'kristinastoyanovax'
           git config --global user.email 'christina.st.stoyanova@gmail.com'
           git commit -am "Automated report"

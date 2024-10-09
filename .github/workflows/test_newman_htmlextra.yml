@@ -24,7 +24,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: install git
+        run: apt-get install git -y
       - uses: actions/checkout@v4
+      
 
       - name: Newman Run
         run: newman run .github/workflows/Books-API.postman_collection.json --reporters cli,htmlextra

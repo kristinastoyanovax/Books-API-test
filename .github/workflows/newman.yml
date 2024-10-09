@@ -29,5 +29,5 @@ jobs:
         # uses: matt-ball/newman-action@170d252f10d199d75d6be4c739b48a3bd5f15ece
         uses: matt-ball/newman-action@v2.0.0
         with:
-          collection: Books-API.postman_collection.json
-        
+          collection: .github/workflows/Books-API.postman_collection.json
+          environment: .github/workflows/Books-API.postman_collection.json
